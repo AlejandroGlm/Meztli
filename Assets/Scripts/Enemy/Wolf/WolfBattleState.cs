@@ -11,7 +11,7 @@ public class WolfBattleState : EnemyState
     // Distancia mínima para atacar
     private float attackRange = 1.5f;
     // Distancia máxima para perseguir al jugador
-    private float chaseRange = 5f;
+    private float chaseRange = 50f;
 
     public WolfBattleState(Enemy _enemyBase, EnemyStateMachine _stateMachine, string _animBoolName, Enemy_Wolf _enemy) : base(_enemyBase, _stateMachine, _animBoolName)
     {

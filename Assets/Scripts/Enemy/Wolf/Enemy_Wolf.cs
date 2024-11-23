@@ -13,6 +13,8 @@ public class Enemy_Wolf : Enemy
     //public WolfAttack3State attack3State { get; private set; }
 
     public WolfStunnedState stunnedState { get; private set; }
+
+    public WolfDeadState deadState {  get; private set; }
     
     #endregion
 
@@ -28,6 +30,7 @@ public class Enemy_Wolf : Enemy
         //attack3State = new WolfAttack3State(this, stateMachine, "Attack3", this);
         battleState = new WolfBattleState(this, stateMachine, "Move", this);
         stunnedState = new WolfStunnedState(this, stateMachine, "Stunned", this);
+        deadState = new WolfDeadState(this, stateMachine, "Idle", this);
 
     }
 
@@ -54,6 +57,12 @@ public class Enemy_Wolf : Enemy
             return true;
         }
         return false;
+    }
+
+    public override void Die()
+    {
+        base.Die();
+        stateMachine.ChangeState(deadState);
     }
 }
 
