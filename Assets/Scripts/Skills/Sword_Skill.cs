@@ -10,7 +10,6 @@ public enum SwordType
     Spin
 }
 
-
 public class Sword_Skill : Skill
 {
     public SwordType swordType = SwordType.Regular;

@@ -6,6 +6,7 @@ public class Clone_Skill : Skill
 {
 
 
+
     [Header("Clone info")]
     [SerializeField] private GameObject clonePrefab;
     [SerializeField] private float cloneDuration;
@@ -24,7 +25,6 @@ public class Clone_Skill : Skill
 
     public void CreateClone(Transform _clonePosition, Vector3 _offset)
     {
-
         if (crystalInseadOfClone)
         {
             SkillManager.instance.crystal.CreateCrystal();
@@ -34,7 +34,7 @@ public class Clone_Skill : Skill
         GameObject newClone = Instantiate(clonePrefab);
 
         newClone.GetComponent<Clone_Skill_Controller>().
-            SetupClone(_clonePosition, cloneDuration, canAttack, _offset, FindClosestEnemy(newClone.transform), canDuplicateClone, chanceToDuplicate);
+            SetupClone(_clonePosition, cloneDuration, canAttack, _offset, FindClosestEnemy(newClone.transform), canDuplicateClone, chanceToDuplicate, player);
     }
 
     public void CreateCloneOnDashStart()

@@ -15,10 +15,11 @@ public class Enemy_SkeletonAnimationTriggers : MonoBehaviour
     {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(enemy.attackCheck.position, enemy.attackCheckRadius);
 
-        foreach(var hit in colliders)
+        foreach (var hit in colliders)
         {
             if (hit.GetComponent<Player>() != null)
             {
+
                 PlayerStats target = hit.GetComponent<PlayerStats>();
                 enemy.stats.DoDamage(target);
             }
@@ -26,5 +27,5 @@ public class Enemy_SkeletonAnimationTriggers : MonoBehaviour
     }
 
     private void OpenCounterWindow() => enemy.OpenCounterAttackWindow();
-    private void CloseCounterWindow() => enemy.CloseCounterAttackWindow(); 
+    private void CloseCounterWindow() => enemy.CloseCounterAttackWindow();
 }

@@ -25,20 +25,19 @@ public class PlayerGroundedState : PlayerState
         if (Input.GetKeyDown(KeyCode.R))
             stateMachine.ChangeState(player.blackHole);
 
-        if (Input.GetKeyDown(KeyCode.Mouse1) && HasNoSword())                    //Habilidad para lanzar //desactivar
+        if (Input.GetKeyDown(KeyCode.Mouse1) && HasNoSword())
             stateMachine.ChangeState(player.aimSowrd);
 
-
-        if (Input.GetKeyDown(KeyCode.Q))                                //hacer parry, poner X
+        if (Input.GetKeyDown(KeyCode.Q))
             stateMachine.ChangeState(player.counterAttack);
 
-        if (Input.GetKeyDown(KeyCode.Mouse0))                   //  if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.Mouse0))
             stateMachine.ChangeState(player.primaryAttack);
 
         if (!player.IsGroundDetected())
             stateMachine.ChangeState(player.airState);
 
-        if (Input.GetKeyDown(KeyCode.Space) && player.IsGroundDetected())  
+        if (Input.GetKeyDown(KeyCode.Space) && player.IsGroundDetected())
             stateMachine.ChangeState(player.jumpState);
     }
 
@@ -52,5 +51,4 @@ public class PlayerGroundedState : PlayerState
         player.sword.GetComponent<Sword_Skill_Controller>().ReturnSword();
         return false;
     }
-
 }

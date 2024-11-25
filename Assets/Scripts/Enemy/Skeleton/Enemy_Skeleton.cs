@@ -6,10 +6,12 @@ public class Enemy_Skeleton : Enemy
 {
 
     #region States
-    public SkeletonIdleState idleState {  get; private set; }
+
+    public SkeletonIdleState idleState { get; private set; }
     public SkeletonMoveState moveState { get; private set; }
     public SkeletonBattleState battleState { get; private set; }
     public SkeletonAttackState attackState { get; private set; }
+
     public SkeletonStunnedState stunnedState { get; private set; }
     public SkeletonDeadState deadState { get; private set; }
     #endregion
@@ -52,12 +54,12 @@ public class Enemy_Skeleton : Enemy
         }
 
         return false;
-
     }
 
     public override void Die()
     {
         base.Die();
         stateMachine.ChangeState(deadState);
+
     }
 }

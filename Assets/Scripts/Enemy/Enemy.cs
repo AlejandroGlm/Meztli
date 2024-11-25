@@ -24,8 +24,7 @@ public class Enemy : Entity
     [HideInInspector] public float lastTimeAttacked;
 
     public EnemyStateMachine stateMachine { get; private set; }
-    public string lastAnimBoolName {  get; private set; }
-
+    public string lastAnimBoolName { get; private set; }
     protected override void Awake()
     {
         base.Awake();
@@ -38,12 +37,27 @@ public class Enemy : Entity
     {
         base.Update();
 
-        stateMachine.currentState.Update(); 
+
+        stateMachine.currentState.Update();
+
     }
 
-    public virtual void AssignLastAnimName(string _animBoolName)
+    public virtual void AssignLastAnimName(string _animBoolName) => lastAnimBoolName = _animBoolName;
+
+
+    public override void SlowEntityBy(float _slowPercentage, float _slowDuration)
     {
-        lastAnimBoolName = _animBoolName;
+        moveSpeed = moveSpeed * (1 - _slowPercentage);
+        anim.speed = anim.speed * (1 - _slowPercentage);
+
+        Invoke("ReturnDefaultSpeed", _slowDuration);
+    }
+
+    protected override void ReturnDefaultSpeed()
+    {
+        base.ReturnDefaultSpeed();
+
+        moveSpeed = defaultMoveSpeed;
     }
 
     public virtual void FreezeTime(bool _timeFrozen)
@@ -51,7 +65,7 @@ public class Enemy : Entity
         if (_timeFrozen)
         {
             moveSpeed = 0;
-            anim.speed = 0; 
+            anim.speed = 0;
         }
         else
         {
@@ -62,6 +76,8 @@ public class Enemy : Entity
 
     protected virtual IEnumerator FreezeTimerFor(float _seconds)
     {
+
+
         FreezeTime(true);
 
         yield return new WaitForSeconds(_seconds);
@@ -78,8 +94,8 @@ public class Enemy : Entity
 
     public virtual void CloseCounterAttackWindow()
     {
-        canBeStunned= false;
-        counterImage.SetActive(false); 
+        canBeStunned = false;
+        counterImage.SetActive(false);
     }
     #endregion
 
@@ -90,13 +106,13 @@ public class Enemy : Entity
             CloseCounterAttackWindow();
             return true;
         }
+
         return false;
     }
 
     public virtual void AnimationFinishTrigger() => stateMachine.currentState.AnimationFinishTrigger();
 
     public virtual RaycastHit2D IsPlayerDetected() => Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, 50, whatIsPlayer);
-
     protected override void OnDrawGizmos()
     {
         base.OnDrawGizmos();
