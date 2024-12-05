@@ -1,6 +1,6 @@
-# The Rise Of The Moon - Demo Version 1.0
+# The Rise Of The Moon - 
 
-**¡Bienvenido a la versión demo de *The Rise Of The Moon*!**
+**¡Bienvenido a *The Rise Of The Moon*!**
 
 Este es un juego 2D desarrollado en Unity, en el que tomas el control de un valiente héroe con habilidades únicas. Esta es la versión 1.0 de la demo, donde podrás probar las mecánicas básicas del jugador y los enemigos.
 
