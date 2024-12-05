@@ -43,9 +43,7 @@ Para jugar, necesitas tener **Git** instalado en tu sistema. Si no tienes Git, p
 
 > **Nota:** Como esta es la versión beta, nos hemos centrado en implementar las funcionalidades básicas del jugador y de los enemigos. Algunos elementos adicionales aún no están disponibles.
 
-## Planes para la versión final
-
-En futuras actualizaciones, planeamos implementar las siguientes mejoras y características:
+## Futuras actualizaciones
 
 1. **Corregir Bugs**: Refinar el código y corregir posibles errores.
 2. **Añadir niveles**: Introducir más escenarios y desafíos.
@@ -54,4 +52,3 @@ En futuras actualizaciones, planeamos implementar las siguientes mejoras y carac
 
 ---
 
-**¡Gracias por probar nuestra demo!** No dudes en darnos tus comentarios para seguir mejorando el juego.
