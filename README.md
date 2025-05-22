@@ -55,6 +55,14 @@ Para jugar, necesitas tener **Git** instalado en tu sistema. Si no tienes Git, p
 
 **Osvaldo Gaspar**  
 GitHub: [@AlejandroGlm](https://github.com/AlejandroGlm)
+![image](https://github.com/user-attachments/assets/870efbf9-9456-40a1-8b0e-09f6911f94eb)
+
+![image](https://github.com/user-attachments/assets/05499da4-1ce7-47e1-b52d-af15826bc6fd)
+
+![image](https://github.com/user-attachments/assets/6be7285a-bdfe-402f-ab2e-1ae4ba0a2359)
+
+
+
 
 
 
