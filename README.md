@@ -50,5 +50,13 @@ Para jugar, necesitas tener **Git** instalado en tu sistema. Si no tienes Git, p
 3. **Añadir jefes**: Incluir enemigos más poderosos y desafiantes.
 4. **Añadir sonidos**: Integrar música y efectos de sonido para mejorar la experiencia de juego.
 
+
+## 👨‍💻 Autor
+
+**Osvaldo Gaspar**  
+GitHub: [@AlejandroGlm](https://github.com/AlejandroGlm)
+
+
+
 ---
 
